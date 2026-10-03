@@ -1,3 +1,16 @@
 spring:
   application:
     name: rider-service
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/plume_rider_dev"
+    username: "${DB_USER}"
+    password: "${DB_PASSWORD}"
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: 8081
+  servlet:
+    # TODO: /api is a placeholder. Once the API Gateway exists, decide routing there (e.g. gateway receives /riders/** and forwards to this service) — don't bake a /riders prefix in here preemptively.
+    context-path: /api
