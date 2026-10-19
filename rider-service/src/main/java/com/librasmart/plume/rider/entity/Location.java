@@ -1,0 +1,11 @@
+package com.librasmart.plume.rider.entity;
+
+import jakarta.persistence.Embeddable;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
+
+@Embeddable
+public record Location(
+        @DecimalMin("-90.0") @DecimalMax("90.0") double latitude,
+        @DecimalMin("-180.0") @DecimalMax("180.0") double longitude
+) { }
